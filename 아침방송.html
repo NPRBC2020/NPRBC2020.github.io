@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&family=Sunflower:wght@300;500&display=swap"
+    rel="stylesheet">
+  <title>아침방송</title>
+  <script>
+    function toggleFullScreen(eid) {
+      if (document.getElementById(eid).requestFullScreen) {
+        document.getElementById(eid).requestFullScreen();
+        setTimeout(document.getElementById(eid).play(), 1500);
+      } else if (document.getElementById(eid).webkitRequestFullScreen) {
+        document.getElementById(eid).webkitRequestFullScreen();
+        setTimeout(document.getElementById(eid).play(), 1500);
+      } else if (document.getElementById(eid).mozRequestFullScreen) {
+        document.getElementById(eid).mozRequestFullScreen();
+        setTimeout(document.getElementById(eid).play(), 1500);
+      }
+    }
+
+    function toggleHide(eid) {
+      document.getElementById(eid).style.display = "none";
+    }
+
+    function toggleLoop(eidc) {
+      document.getElementById(eidc).loop = !document.getElementById(eid).loop;
+    }
+  </script>
+  <style>
+    * {
+      align-items: center;
+      text-align: center;
+      scroll-behavior: smooth;
+      font-family: 'Gamja Flower';
+    }
+
+    h2 {
+      font-family: 'Gugi';
+    }
+
+    button span {
+      font-family: 'Gugi';
+      font-size: 17pt;
+    }
+
+    body {
+      height: 100%;
+    }
+
+    .header {
+      top: 0;
+      left: 0;
+      position: fixed;
+      width: 15%;
+      height: 100%;
+      background: linear-gradient(270deg, #ffa2a2, #8fff89, #0081ff);
+      background-size: 600% 600%;
+      -webkit-animation: Header-Grad 13s ease infinite;
+      -moz-animation: Header-Grad 13s ease infinite;
+      animation: Header-Grad 13s ease infinite;
+      text-align: center;
+    }
+
+    #top {
+      width: 100%;
+      height: 1000px;
+      margin: 0;
+      background: linear-gradient(270deg, #ffa2a2, #8fff89, #0081ff);
+      background-size: 600% 600%;
+      -webkit-animation: Header-Grad 13s ease infinite;
+      -moz-animation: Header-Grad 13s ease infinite;
+      animation: Header-Grad 13s ease infinite;
+    }
+
+    .header:hover {
+      transition: 1s;
+      -webkit-animation: Header-Text-ani 5s ease infinite;
+      -moz-animation: Header-Text-ani 5s ease infinite;
+      animation: Header-Text-ani 5s ease infinite;
+      -webkit-animation: Header-Grad 3s ease infinite;
+      -moz-animation: Header-Grad 3s ease infinite;
+      animation: Header-Grad 3s ease infinite;
+    }
+
+    @-webkit-keyframes Header-Grad {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @-moz-keyframes Header-Grad {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @keyframes Header-Grad {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @-webkit-keyframes Header-Text-ani {
+      0% {
+        color: black;
+        text-align: center;
+      }
+
+      25% {
+        color: red;
+        text-align: right;
+      }
+
+      50% {
+        color: white;
+        padding-right: 0%;
+        text-align: left;
+      }
+
+      100% {
+        color: black;
+        padding-left: 0%;
+        text-align: center;
+      }
+    }
+
+    @-moz-keyframes Header-Text-ani {
+      0% {
+        color: black;
+        text-align: center;
+      }
+
+      25% {
+        color: red;
+        text-align: right;
+      }
+
+      50% {
+        color: white;
+        padding-right: 0%;
+        text-align: left;
+      }
+
+      100% {
+        color: black;
+        padding-left: 0%;
+        text-align: center;
+      }
+    }
+
+    @keyframes Header-Text-ani {
+      0% {
+        color: black;
+        text-align: center;
+      }
+
+      25% {
+        color: red;
+        text-align: right;
+      }
+
+      50% {
+        color: white;
+        padding-right: 0%;
+        text-align: left;
+      }
+
+      100% {
+        color: black;
+        padding-left: 0%;
+        text-align: center;
+      }
+    }
+
+    .video {
+      cursor: help;
+      width: 50%;
+    }
+
+    .video:hover {
+      border-top: rgb(105, 32, 32) dotted 10px;
+      border-bottom: rgb(105, 32, 32) dotted 10px;
+      height: 47%;
+      transition: 0.5s;
+    }
+
+    .control-button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: pink;
+      color: black;
+      text-align: center;
+      border: none;
+      font-size: 28px;
+      padding: 15px;
+      transition: all 0.5s;
+      margin-bottom: 10px;
+    }
+
+    .control-button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .control-button:hover span {
+      padding-right: 40px;
+    }
+
+    .control-button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    .play span:after {
+      content: '▶️';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -30px;
+      transition: 1s;
+    }
+
+    .pause span:after {
+      content: '⏸';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -30px;
+      transition: 1s;
+    }
+
+    .reset span {
+      cursor: alias;
+    }
+
+    .reset span:after {
+      content: '⏹';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -30px;
+      transition: 1s;
+    }
+
+    .loop span {
+      cursor: alias;
+    }
+
+    .loop span:after {
+      content: '🔄';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -30px;
+      transition: 1s;
+    }
+
+    .fullscreen span:after {
+      content: '🔲';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -30px;
+      transition: 1s;
+      cursor: nesw-resize;
+    }
+
+    .fullscreen span {
+      cursor: nesw-resize;
+    }
+
+    .video:fullscreen {
+      cursor: none;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!--<div id="top">
+    <h1>NPRBC Broadcasting Assistant</h1>
+    <h2><i>for</i> 아침방송</h2>
+    <h2><i>made by</i> 늘푸른초등학교 방송부 2020</h2>
+    <a href="#bca"><button>시작하기</button></a>
+  </div>-->
+  <div id="bca">
+    <div class="header">
+      <a href="#top"><button>To Starting Point</button></a>
+      <h1 style="font-family:'Sunflower'">아침방송</h1>
+      <h2>NPRBC Broadcasting Assistant <br><i>made by</i> NPRBC2020</h2>
+      <p>[Video FullScreen Autoplay]영상은 영상을 클릭 또는 FullScreen 버튼을 이용해 전체화면으로 전환이 가능하며 전체화면 전환후 1.5초후 자동 재생됩니다.</p>
+    </div>
+    <div id="bcab" style="margin-left: 10%;">
+      <h2>시작전</h2>
+      <p>아나운서의 첫번째 멘트 재생부터 시작해 방송시작(카메라가 움직이기) 직전까지 재생합니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
+        PC-2화면으로
+        전환합니다.</p>
+      <video class="video"
+        src="https://video.wixstatic.com/video/d5ec50_ce738636219f473585a6d1b6a83e91fb/1080p/mp4/file.mp4" loop
+        id="start" onclick="toggleFullScreen('start')"></video>
+      <br>
+      <button class="control-button play" onclick="document.getElementById('start').play()"><span>Play</span></button>
+      <button class="control-button pause"
+        onclick="document.getElementById('start').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('start')"><span>Loop</span></button>
+      <button class="control-button reset" onclick="document.getElementById('start').load()"><span>Reset</span></button>
+      <button class="control-button fullscreen" onclick="toggleFullScreen('start')"><span>FullScreen</span></button>
+      <h2>국기</h2>
+      <p>사회자의 말에 맞춰 재생합니다. 전체화면으로 재생하여야하며, VIDEO-MIXER에서 재생 동시에 PC-2로 화면전환 해줍니다.</p>
+      <video class="video"
+        src="https://video.wixstatic.com/video/d5ec50_fddac402ca154a3ba341d00cdc993d11/480p/mp4/file.mp4" id="1"
+        onclick="toggleFullScreen('1')"></video>
+      <br>
+      <button class="control-button play" onclick="document.getElementById('1').play()"><span>Play</span></button>
+      <button class="control-button pause" onclick="document.getElementById('1').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('1')"><span>Loop</span></button>
+      <button class="control-button reset" onclick="document.getElementById('1').load()"><span>Reset</span></button>
+      <button class="control-button fullscreen" onclick="toggleFullScreen('1')"><span>FullScreen</span></button>
+      <h2>애국가</h2>
+      <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>아래 재생가능한 오디오는 1절만 입니다.</p>
+      <audio src="https://static.wixstatic.com/mp3/d5ec50_103f457f19a84a089a26432351d81fe3.mp3" id="anthem"></audio>
+      <button class="control-button play" onclick="document.getElementById('anthem').play()"><span>Play</span></button>
+      <button class="control-button pause"
+        onclick="document.getElementById('anthem').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('anthem')"><span>Loop</span></button>
+      <button class="control-button reset"
+        onclick="document.getElementById('anthem').load()"><span>Reset</span></button>
+      <h2>교가</h2>
+      <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>'Only Play 1절'을 재생하시면 1절만 재생하고 끝나 더욱 편리하게 이용하실 수 있습니다.</p>
+      <h3>전체</h3>
+      <audio src="https://static.wixstatic.com/mp3/d5ec50_b6a3072057234962826d855d3333f464.mp3" id="schoolSong"></audio>
+      <button class="control-button play"
+        onclick="document.getElementById('schoolSong').play()"><span>Play</span></button>
+      <button class="control-button pause"
+        onclick="document.getElementById('schoolSong').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('schoolSong')"><span>Loop</span></button>
+      <button class="control-button reset"
+        onclick="document.getElementById('schoolSong').load()"><span>Reset</span></button>
+      <h3>Only Play 1절</h3>
+      <audio src="https://static.wixstatic.com/mp3/d5ec50_e5414f2fac2a44f59cbf55596a6c222c.m4a"
+        id="schoolSong1"></audio>
+      <button class="control-button play"
+        onclick="document.getElementById('schoolSong1').play()"><span>Play</span></button>
+      <button class="control-button pause"
+        onclick="document.getElementById('schoolSong1').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('shcoolSong1')"><span>Loop</span></button>
+      <button class="control-button reset"
+        onclick="document.getElementById('schoolSong1').load()"><span>Reset</span></button>
+      <h2>끝</h2>
+      <p>방송이 끝난후 바로 켜서 1회 재생후 VIDEO-MIXER의 전원을 꺼 방송을 끝냅니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
+        PC-2화면으로
+        전환합니다.</p>
+      <video class="video"
+        src="https://video.wixstatic.com/video/d5ec50_36396f625f884cb9a717d478f3a698d4/1080p/mp4/file.mp4" id="end"
+        onclick="toggleFullScreen('end')"></video>
+      <br>
+      <button class="control-button play" onclick="document.getElementById('end').play()"><span>Play</span></button>
+      <button class="control-button pause" onclick="document.getElementById('end').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('end')"><span>Loop</span></button>
+      <button class="control-button reset" onclick="document.getElementById('end').load()"><span>Reset</span></button>
+      <button class="control-button fullscreen" onclick="toggleFullScreen('end')"><span>FullScreen</span></button>
+    </div>
+  </div>
+</body>
+
+</html>
