@@ -3,17 +3,42 @@
 
 <head>
   <title>BAssistant</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&family=Sunflower:wght@300;500&display=swap"
+    rel="stylesheet">
 </head>
 <style>
-  #top {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  * {
+    text-align: center;
+  }
+
+  body {
     background: linear-gradient(270deg, #ffa2a2, #8fff89, #0081ff);
     background-size: 600% 600%;
     -webkit-animation: Header-Grad 13s ease infinite;
     -moz-animation: Header-Grad 13s ease infinite;
     animation: Header-Grad 13s ease infinite;
+  }
+
+  button {
+    background-color: grey;
+    color: lightblue;
+    border: none;
+    border-radius: 20px;
+  }
+
+  h1,
+  h2 {
+    font-family: 'Gugi';
+  }
+
+  #top {
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
 
   @-webkit-keyframes Header-Grad {
@@ -57,15 +82,156 @@
       background-position: 0% 50%
     }
   }
+
+  .sk-cube-grid {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+  }
+
+  .sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #333;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  }
+
+  .sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+
+  .sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+
+  .sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+
+  .sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+  }
+
+  .sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+
+  .sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+
+  .sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+
+  .sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+  }
+
+  .sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+
+  @-webkit-keyframes sk-cubeGridScaleDelay {
+
+    0%,
+    70%,
+    100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+  }
+
+  @keyframes sk-cubeGridScaleDelay {
+
+    0%,
+    70%,
+    100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+  }
+
+  #load1 {
+    cursor: wait;
+  }
 </style>
+<script>
+  function toggle_load() {
+    let load = document.getElementById("load1");
+    let top = document.getElementById("top");
+    if (load.style.display === "none") {
+      load.style.display = "block";
+      top.style.display = "none";
+    } else {
+      load.style.display = "none";
+      top.style.display = "block";
+    }
+  }
+
+  function go_with_load(ms, link) {
+    toggle_load();
+    setTimeout(function () { toggle_load(); window.open('https://nprbc2020.github.io' + link); window.reload() }, ms);
+  }
+</script>
 
 <body>
   <div id="top">
-    <h1>NPRBC Broadcasting Assistant</h1>
-    <h2><i>βeta</i></h2>
-    <h2><i>made by</i> 늘푸른초등학교 방송부 2020</h2>
-    <a href="/morning"><button>아침방송용: 시작하기</button></a>
-    <a href="/neulbo"><button>늘보마당용: 시작하기</button></a>
+    <h1>NPRBC Broadcasting Assistant<br><span style="font-size: 15pt">for PC-2</span>
+    </h1>
+    <h2>
+      <span style="font-size: 10pt">version</span> <i>1.0</i>
+    </h2>
+    <h2>
+      <span style="font-size: 10pt"><i>made by</i></span> 늘푸른초등학교 방송부 2020 <span style="font-size: 10pt;">기계 PC-2
+        담당자</span>
+    </h2>
+    <button onclick="go_with_load(2500, '/morning')">
+      <span style="font-size: 30px">아침방송용</span><br>시작하기
+    </button>
+    <button onclick="go_with_load(2500, '/neulbo')">
+      <span style="font-size: 30px">늘보마당용</span><br>시작하기
+    </button>
+    <h2><span style="font-size:10pt">[Update Info]</span><br>BCA for PC-2 정식버전 1.0 출시!</h3>
+  </div>
+  <div id="load1" style="display: none;">
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+    <p style="font-family: gugi">Loading...<br>This should only take a few seconds. If it doesn't work change the 'block
+      pop-ups' settings in your
+      browser preferences. Refresh this page to try again</p>
+    <button
+      onclick="window.alert('Page will reload in 1 second.'); setTimeout(function () { window.reload() }, 1000);">Reload</button>
   </div>
 </body>
 
