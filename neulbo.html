@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&family=Sunflower:wght@300;500&display=swap"
+    rel="stylesheet">
+  <link href="bca-style.css" rel="stylesheet">
+  <script src="video_controls.js"></script>
+  <title>늘보마당</title>
+</head>
+
+<body>
+  <div id="bca">
+    <div class="header">
+      <a href="/"><button>To Starting Page</button></a>
+      <h1 style="font-family:'Sunflower'">늘보마당</h1>
+      <h2>NPRBC Broadcasting Assistant <br><i>made by</i> NPRBC2020</h2>
+      <p>[Video FullScreen Autoplay]영상은 FullScreen 버튼을 이용해 전체화면으로 전환이 가능하며 전체화면 전환후 자동 재생됩니다.</p>
+    </div>
+    <div id="bcab" style="margin-left: 10%;">
+      <h2>시작전</h2>
+      <p>아나운서의 첫번째 멘트 재생부터 시작해 방송시작(카메라가 움직이기) 직전까지 재생합니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
+        PC-2화면으로
+        전환합니다.</p>
+      <video class="video"
+        src="https://video.wixstatic.com/video/d5ec50_ce738636219f473585a6d1b6a83e91fb/1080p/mp4/file.mp4" loop
+        id="start" onclick="toggleFullScreen('start')"></video>
+      <br>
+      <button class="control-button play" onclick="document.getElementById('start').play()"><span>Play</span></button>
+      <button class="control-button pause"
+        onclick="document.getElementById('start').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('start')"><span>Loop</span></button>
+      <button class="control-button reset" onclick="document.getElementById('start').load()"><span>Reset</span></button>
+      <button class="control-button fullscreen" onclick="toggleFullScreen('start')"><span>FullScreen</span></button>
+      <h2>재생</h2>
+      <iframe src="https://nprbc2020.github.io/frames/neulbo_frame"></iframe>
+      <h2>끝</h2>
+      <p>방송이 끝난후 바로 켜서 1회 재생후 VIDEO-MIXER의 전원을 꺼 방송을 끝냅니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
+        PC-2화면으로
+        전환합니다.</p>
+      <video class="video"
+        src="https://video.wixstatic.com/video/d5ec50_36396f625f884cb9a717d478f3a698d4/1080p/mp4/file.mp4" id="end"
+        onclick="toggleFullScreen('end')"></video>
+      <br>
+      <button class="control-button play" onclick="document.getElementById('end').play()"><span>Play</span></button>
+      <button class="control-button pause" onclick="document.getElementById('end').pause()"><span>Pause</span></button>
+      <button class="control-button loop" onclick="toggleLoop('end')"><span>Loop</span></button>
+      <button class="control-button reset" onclick="document.getElementById('end').load()"><span>Reset</span></button>
+      <button class="control-button fullscreen" onclick="toggleFullScreen('end')"><span>FullScreen</span></button>
+    </div>
+  </div>
+</body>
+
+</html>

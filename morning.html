@@ -1,33 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&family=Sunflower:wght@300;500&display=swap"
     rel="stylesheet">
   <title>아침방송</title>
-  <script>
-    function toggleFullScreen(eid) {
-      if (document.getElementById(eid).requestFullScreen) {
-        document.getElementById(eid).requestFullScreen();
-        setTimeout(document.getElementById(eid).play(), 1500);
-      } else if (document.getElementById(eid).webkitRequestFullScreen) {
-        document.getElementById(eid).webkitRequestFullScreen();
-        setTimeout(document.getElementById(eid).play(), 1500);
-      } else if (document.getElementById(eid).mozRequestFullScreen) {
-        document.getElementById(eid).mozRequestFullScreen();
-        setTimeout(document.getElementById(eid).play(), 1500);
-      }
-    }
-
-    function toggleHide(eid) {
-      document.getElementById(eid).style.display = "none";
-    }
-
-    function toggleLoop(eidc) {
-      document.getElementById(eidc).loop = !document.getElementById(eid).loop;
-    }
-  </script>
+  <script src="video_controls.js"></script>
   <style>
     * {
       align-items: center;
@@ -322,10 +302,10 @@
   </div>-->
   <div id="bca">
     <div class="header">
-      <a href="/"><button>To Starting Point</button></a>
+      <a href="/"><button>To Starting Page</button></a>
       <h1 style="font-family:'Sunflower'">아침방송</h1>
       <h2>NPRBC Broadcasting Assistant <br><i>made by</i> NPRBC2020</h2>
-      <p>[Video FullScreen Autoplay]영상은 영상을 클릭 또는 FullScreen 버튼을 이용해 전체화면으로 전환이 가능하며 전체화면 전환후 자동 재생됩니다.</p>
+      <p>[Video FullScreen Autoplay]영상은 FullScreen 버튼을 이용해 전체화면으로 전환이 가능하며 전체화면 전환후 자동 재생됩니다.</p>
     </div>
     <div id="bcab" style="margin-left: 10%;">
       <h2>시작전</h2>
