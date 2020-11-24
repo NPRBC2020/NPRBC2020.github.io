@@ -18,3 +18,15 @@ function toggleHide(eid) {
 function toggleLoop(eidc) {
   document.getElementById(eidc).loop = !document.getElementById(eid).loop;
 }
+
+function start_music(mid, tdid, ftdid) {
+  let m = document.getElementById(mid);
+  m.play();
+  document.getElementById(ftdid).innerHTML = m.duration;
+  m.ontimeupdate = function () { document.getElementById(tdid).innerHTML = m.currentTime; };
+}
+
+function av_goto(eid) {
+  let c = document.getElementById(eid);
+  c.currentTime = window.prompt('Goto time(sec):')
+}

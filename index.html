@@ -194,6 +194,12 @@
     toggle_load();
     setTimeout(function () { toggle_load(); window.open('https://nprbc2020.github.io' + link); window.reload() }, ms);
   }
+
+  function mail() {
+    let subject = window.prompt('문의 내용 제목 입력');
+    let text = window.prompt('내용을 입력해주세요.');
+    window.open(`mailto:nprbc20@gmail.com?subject=${subject}&body=BCA문의입니다.${text}`);
+  }
 </script>
 
 <body>
@@ -214,6 +220,9 @@
       <span style="font-size: 30px">늘보마당용</span><br>시작하기
     </button>
     <h2><span style="font-size:10pt">[Update Info]</span><br>BCA for PC-2 정식버전 1.0 출시!</h3>
+      <button onclick="window.alert
+      ('Page will reload in 1 second.'); setTimeout(function () { window.reload() }, 1000);">Reload</button>
+      <p>문의는 <button onclick="mail();">여기</button> 클릭</p>
   </div>
   <div id="load1" style="display: none;">
     <div class="sk-cube-grid">
@@ -227,11 +236,10 @@
       <div class="sk-cube sk-cube8"></div>
       <div class="sk-cube sk-cube9"></div>
     </div>
-    <p style="font-family: gugi">Loading...<br>This should only take a few seconds. If it doesn't work change the 'block
+    <p style="font-family: gugi">Loading<span id="ld1">...</span><br>This should only take a few seconds. If it doesn't
+      work change the 'block
       pop-ups' settings in your
       browser preferences. Refresh this page to try again</p>
-    <button
-      onclick="window.alert('Page will reload in 1 second.'); setTimeout(function () { window.reload() }, 1000);">Reload</button>
   </div>
 </body>
 
