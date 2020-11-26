@@ -192,7 +192,7 @@
 
   function go_with_load(ms, link) {
     toggle_load();
-    setTimeout(function () { toggle_load(); window.open('https://nprbc2020.github.io' + link); window.reload() }, ms);
+    setTimeout(function () { toggle_load(); window.open('https://nprbc2020.github.io' + link); /*window.reload()*/ }, ms);
   }
 
   function mail() {
@@ -207,22 +207,27 @@
     <h1>NPRBC Broadcasting Assistant<br><span style="font-size: 15pt">for PC-2</span>
     </h1>
     <h2>
-      <span style="font-size: 10pt">version</span> <i>1.0</i>
+      <span style="font-size: 10pt">version</span> <i>1.1</i>
     </h2>
     <h2>
       <span style="font-size: 10pt"><i>made by</i></span> 늘푸른초등학교 방송부 2020 <span style="font-size: 10pt;">기계 PC-2
         담당자</span>
     </h2>
-    <button onclick="go_with_load(2500, '/morning')">
+    <button onclick="go_with_load(500, '/morning')">
       <span style="font-size: 30px">아침방송용</span><br>시작하기
     </button>
     <button onclick="go_with_load(2500, '/neulbo')">
       <span style="font-size: 30px">늘보마당용</span><br>시작하기
     </button>
-    <h2><span style="font-size:10pt">[Update Info]</span><br>BCA for PC-2 정식버전 1.0 출시!</h3>
-      <button onclick="window.alert
-      ('Page will reload in 1 second.'); setTimeout(function () { window.reload() }, 1000);">Reload</button>
-      <p>문의는 <button onclick="mail();">여기</button> 클릭</p>
+    <h2><span style="font-size:10pt">[Update Info]</span><br>BCA for PC-2 v1.1 Updated!</h2>
+    <p>TEST점수 확인하기 기능 추가!</p>
+    <button onclick="window.alert
+      ('Page will reload.'); window.reload()">Reload</button>
+    <p>문의는 <button onclick="mail();">여기</button> 클릭</p>
+    <button onclick="go_with_load(2500, '/testscore')"
+      style="width: 300px; height: 300px; color: orange; background-color: rgb(88, 88, 255)">
+      <span style="font-size: 30px">내 2차 기계 TEST 점수</span><br>확인하러 가기
+    </button>
   </div>
   <div id="load1" style="display: none;">
     <div class="sk-cube-grid">
