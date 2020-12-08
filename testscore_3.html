@@ -1,0 +1,265 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Gugi&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <title>점수 확인하기</title>
+  <style>
+    * {
+      text-align: center;
+    }
+
+    body {
+      background: linear-gradient(270deg, #ffa2a2, #5badff);
+      -webkit-animation: Header-Grad 13s ease infinite;
+      -moz-animation: Header-Grad 13s ease infinite;
+      animation: Header-Grad 13s ease infinite;
+      font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    button {
+      background-color: grey;
+      color: lightblue;
+      font-size: 20pt;
+      border-radius: 5px;
+    }
+
+    .sk-cube-grid {
+      width: 40px;
+      height: 40px;
+      margin: 100px auto;
+    }
+
+    .sk-cube-grid .sk-cube {
+      width: 33%;
+      height: 33%;
+      background-color: #333;
+      float: left;
+      -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+      animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    }
+
+    .sk-cube-grid .sk-cube1 {
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+    }
+
+    .sk-cube-grid .sk-cube2 {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+
+    .sk-cube-grid .sk-cube3 {
+      -webkit-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+    }
+
+    .sk-cube-grid .sk-cube4 {
+      -webkit-animation-delay: 0.1s;
+      animation-delay: 0.1s;
+    }
+
+    .sk-cube-grid .sk-cube5 {
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+    }
+
+    .sk-cube-grid .sk-cube6 {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+
+    .sk-cube-grid .sk-cube7 {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+
+    .sk-cube-grid .sk-cube8 {
+      -webkit-animation-delay: 0.1s;
+      animation-delay: 0.1s;
+    }
+
+    .sk-cube-grid .sk-cube9 {
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+    }
+
+    @-webkit-keyframes sk-cubeGridScaleDelay {
+
+      0%,
+      70%,
+      100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+      }
+
+      35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+      }
+    }
+
+    @keyframes sk-cubeGridScaleDelay {
+
+      0%,
+      70%,
+      100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+      }
+
+      35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+      }
+    }
+
+    .ml14 {
+      font-weight: 200;
+      font-size: 3.2em;
+    }
+
+    .ml14 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.1em;
+      padding-right: 0.05em;
+      padding-bottom: 0.15em;
+    }
+
+    .ml14 .line {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+      transform-origin: 100% 100%;
+      bottom: 0;
+    }
+
+    .ml14 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+  </style>
+  <script>
+    function show_score() {
+      let passcode = window.prompt('Enter Your Passcode.');
+      let ss = document.getElementById('score');
+      let ne = document.getElementById('name');
+      let info = document.getElementById('info');
+      let ts = 60;
+      let as = 60;
+      let cs = 60;
+      let name = "방송부원";
+      let e = false;
+      let tavg = '정보없음';
+      let aavg = '정보없음';
+      let avgci = '아직 평균 계산이 불가능 합니다.';
+      let day = '정보 없음';
+
+      if (passcode == 8071) {
+        name = '배하진';
+        ts = 80;
+        as = 67;
+        cs = 94;
+        day = 'MON'
+      } else if (passcode == 0971) {
+        name = '황도현';
+        ts = 'TEST 전';
+        as = 'TEST 전';
+        cs = 'TEST 전';
+        day = "TUE"
+      } else if (passcode == 2820) {
+        name = '민지연';
+        ts = 56;
+        as = 75;
+        cs = 96;
+        day = "MON"
+      } else if (passcode == 4194) {
+        name = '배현진';
+        ts = 73;
+        as = 76;
+        cs = 87;
+        day = "MON"
+      } else if (passcode == 6076) {
+        name = '김유은';
+        ts = 'TEST 전';
+        as = 'TEST 전';
+        cs = 'TEST 전';
+        day = "TUE"
+      } else if (passcode == 5275) {
+        name = "윤현서";
+        ts = 'TEST 전';
+        as = 'TEST 전';
+        cs = 'TEST 전';
+        day = "TUE"
+      } else {
+        document.getElementById("load1").style.display = 'block';
+        setTimeout(function () {
+          document.getElementById("load1").style.display = 'none'; window.alert('등록되지 않은 패스코드입니다.'); ne.innerHTML = ', ' + name + ' 님';
+          ss.innerHTML = "등록되지 않은 패스코드입니다. 다시 한번 확인하고 시도해 주세요.";
+        }, 1500);
+        e = true;
+      }
+
+      if (!e) {
+        /*if (ts > tavg) {
+          avgci = `기계 점수가 평균(${tavg})보다 높습니다. `;
+        } else if (ts == pc2avg) {
+          avgci = `기계 점수가 평균(${tavg})과 같습니다. `;
+        } else if (ts < pc2avg) {
+          avgci = `기계 점수가 평균(${tavg})보다 낮습니다. `;
+        }
+
+        if (as > aavg) {
+          avgci += `아나운서 점수가 평균(${aavg})보다 높습니다.`;
+        } else if (as == vmavg) {
+          avgci += `아나운서 점수가 평균(${aavg})과 같습니다.`;
+        } else if (as < vmavg) {
+          avgci += `아나운서 점수가 평균(${aavg})보다 낮습니다.`;
+        }
+
+        if (cs > cavg) {
+          avgci += `카메라 점수가 평균(${cavg})보다 높습니다.`;
+        } else if (as == vmavg) {
+          avgci += `카메라 점수가 평균(${cavg})과 같습니다.`;
+        } else if (as < vmavg) {
+          avgci += `카메라 점수가 평균(${cavg})보다 낮습니다.`;
+        }*/
+        var audio = new Audio(`./audio/hello/${name}.mp3`);
+        audio.play();
+        ne.innerHTML = ', ' + name + ' 님';
+        document.getElementById("load1").style.display = 'block';
+        setTimeout(function () { document.getElementById("load1").style.display = 'none'; ss.innerHTML = `<span style="font-size: 15px">${name}님의 점수는</span><br>PC-2 + V-Mix: ${ts} /100<br>Announcer: ${as} /100<br>Camera: ${cs} /100<br><span style="font-size: 20px">${avgci}</span><br><span style="font-size: 20px">요일: ${day}</span>`; }, 2500);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>
+    당신의 3차 TEST 점수를 확인하세요.
+  </h1>
+  <audio src="audio/hello/"></audio>
+  <button onclick="show_score()">See my score</button>
+  <div id="load1" style="display: none">
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube9"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+    </div>
+    <p style="font-family: Gugi;">Loading...</p>
+  </div>
+  <h2>안녕하세요<span id="name">, 방송부원 님.</span></h2>
+  <p>Passcode는 6학년 BCA 개발 담당자에게 문의해주세요. Passcode를 잊으셨다면 물어보고 정보 유출 등의 이유로 재발급을 원하시면 알려주세요.</p>
+  <h1><span id="score" style="font-weight: normal;">Your <i style="font-family: 'Gugi';">score</i> is... </span></h1>
+  <p>어떤 것이든 '궁금한 점'이 있으면 기계PC-2담당자에게 질문해주세요!</p>
+  <button onclick="window.reload()">Reload</button>
+</body>
