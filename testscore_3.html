@@ -153,8 +153,9 @@
       let cs = 60;
       let name = "방송부원";
       let e = false;
-      let tavg = '정보없음';
-      let aavg = '정보없음';
+      let tavg = 76.16;
+      let aavg = 75.6;
+      let cavg = 86.6;
       let avgci = '아직 평균 계산이 불가능 합니다.';
       let day = '정보 없음';
 
@@ -204,7 +205,7 @@
       }
 
       if (!e) {
-        /*if (ts > tavg) {
+        if (ts > tavg) {
           avgci = `기계 점수가 평균(${tavg})보다 높습니다. `;
         } else if (ts == pc2avg) {
           avgci = `기계 점수가 평균(${tavg})과 같습니다. `;
@@ -214,19 +215,19 @@
 
         if (as > aavg) {
           avgci += `아나운서 점수가 평균(${aavg})보다 높습니다.`;
-        } else if (as == vmavg) {
+        } else if (as == aavg) {
           avgci += `아나운서 점수가 평균(${aavg})과 같습니다.`;
-        } else if (as < vmavg) {
+        } else if (as < aavg) {
           avgci += `아나운서 점수가 평균(${aavg})보다 낮습니다.`;
         }
 
         if (cs > cavg) {
           avgci += `카메라 점수가 평균(${cavg})보다 높습니다.`;
-        } else if (as == vmavg) {
+        } else if (as == cavg) {
           avgci += `카메라 점수가 평균(${cavg})과 같습니다.`;
-        } else if (as < vmavg) {
+        } else if (as < cavg) {
           avgci += `카메라 점수가 평균(${cavg})보다 낮습니다.`;
-        }*/
+        }
         var audio = new Audio(`./audio/hello/${name}.mp3`);
         audio.play();
         ne.innerHTML = ', ' + name + ' 님';
