@@ -7,7 +7,7 @@
     href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&family=Sunflower:wght@300;500&display=swap"
     rel="stylesheet">
   <title>아침방송</title>
-  <script src="video_controls.js"></script>
+  <script src="av_controls.js"></script>
   <style>
     * {
       align-items: center;
@@ -357,7 +357,9 @@
       </div>
       <h2>애국가</h2>
       <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>아래 재생가능한 오디오는 1절만 입니다.</p>
-      <audio src="https://static.wixstatic.com/mp3/d5ec50_103f457f19a84a089a26432351d81fe3.mp3" id="anthem"></audio>
+      <audio src="https://static.wixstatic.com/mp3/d5ec50_103f457f19a84a089a26432351d81fe3.mp3" id="anthem"
+        controls></audio>
+      <br>
       <button class="control-button play" onclick="start_music('anthem', 'ta', 'fta');"><span>Play</span></button>
       <button class="control-button pause"
         onclick="document.getElementById('anthem').pause()"><span>Pause</span></button>

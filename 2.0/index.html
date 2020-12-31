@@ -10,77 +10,151 @@
 <style>
   * {
     text-align: center;
+    color: lightgrey;
   }
 
   body {
-    background: linear-gradient(270deg, #ffa2a2, #8fff89, #0081ff);
-    background-size: 600% 600%;
-    -webkit-animation: Header-Grad 13s ease infinite;
-    -moz-animation: Header-Grad 13s ease infinite;
-    animation: Header-Grad 13s ease infinite;
+    background: linear-gradient(270deg, #5b5b5b, #0e7730);
+    background-size: 400% 400%;
+    -webkit-animation: BGGrad 15s ease infinite;
+    -moz-animation: BGGrad 15s ease infinite;
+    animation: BGGrad 15s ease infinite;
+  }
+
+  @-webkit-keyframes BGGrad {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @-moz-keyframes BGGrad {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @keyframes BGGrad {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @keyframes TextColorAni {
+    0% {
+      color: lightcoral;
+    }
+
+    50% {
+      color: white;
+    }
+
+    100% {
+      color: lightcoral;
+    }
+  }
+
+  #top {
+    background-color: black;
+    border-radius: 100px;
+    box-shadow: 0 0 25px orange;
+    width: 100%;
+  }
+
+  #tt {
+    animation: TextColorAni 3s ease infinite;
+  }
+
+  .startbtn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 45%;
+  }
+
+  .startbtn:hover {
+    /* border: blue double; */
+    box-shadow: 0 0 5px white;
+    background-color: rgb(31, 31, 31);
+    width: 50%;
+    transition: 0.3s;
+    animation: rotatebtn 15s ease infinite;
+  }
+
+  @keyframes rotatebtn {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    10% {
+      transform: rotateX(30deg) rotateY(0deg);
+    }
+
+    20% {
+      transform: rotateX(0deg) rotateY(20deg);
+    }
+
+    30% {
+      transform: rotateX(0deg) rotateY(30deg);
+    }
+
+    40% {
+      transform: rotateX(360deg) rotateY(0deg);
+    }
+
+    60% {
+      transform: rotateX(0deg) rotateY(-20deg);
+    }
+
+    70% {
+      transform: rotateX(0deg) rotateY(-25deg);
+    }
+
+    80% {
+      transform: rotateX(-360deg) rotateY(-20deg);
+    }
+
+    95% {
+      transform: rotateX(-10deg) rotateY(-10deg);
+    }
+
+    100% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
   }
 
   button {
-    background-color: grey;
-    color: lightblue;
+    background-color: black;
     border: none;
-    border-radius: 20px;
   }
 
   h1,
   h2 {
     font-family: 'Gugi';
-  }
-
-  #top {
-    top: 0;
-    left: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
-
-  @-webkit-keyframes Header-Grad {
-    0% {
-      background-position: 0% 50%
-    }
-
-    50% {
-      background-position: 100% 50%
-    }
-
-    100% {
-      background-position: 0% 50%
-    }
-  }
-
-  @-moz-keyframes Header-Grad {
-    0% {
-      background-position: 0% 50%
-    }
-
-    50% {
-      background-position: 100% 50%
-    }
-
-    100% {
-      background-position: 0% 50%
-    }
-  }
-
-  @keyframes Header-Grad {
-    0% {
-      background-position: 0% 50%
-    }
-
-    50% {
-      background-position: 100% 50%
-    }
-
-    100% {
-      background-position: 0% 50%
-    }
   }
 
   .sk-cube-grid {
@@ -178,7 +252,7 @@
 <script>
   function toggle_load() {
     let load = document.getElementById("load1");
-    let top = document.getElementById("top");
+    let top = document.getElementById("fp");
     if (load.style.display === "none") {
       load.style.display = "block";
       top.style.display = "none";
@@ -201,32 +275,37 @@
 </script>
 
 <body>
-  <div id="top">
-    <h1>NPRBC Broadcasting Assistant<br><span style="font-size: 15pt">for PC-2</span>
-    </h1>
-    <h2>
-      <span style="font-size: 10pt">version</span> <i>1.1</i>
-      <br>
-      <span style="font-size: 10pt">Coming Soon!</span> <i>v2</i>
-    </h2>
-    <h2>
-      <span style="font-size: 10pt"><i>made by</i></span> 늘푸른초등학교 방송부 2020 <span style="font-size: 10pt;">기계 PC-2
-        담당자</span>
-    </h2>
-    <button onclick="go_with_load(500, '/morning')">
-      <span style="font-size: 30px">아침방송용</span><br>시작하기
+  <div id="fp">
+    <div id="top">
+      <h1 id="tt">Broadcasting Assistant<br><span style="font-size: 15pt">for PC-2</span>
+      </h1>
+      <h6 style="font-family: Gugi;">HAPPILY TOOLS</h6>
+      <h2>version</span> <i>v2ᵝ</i>
+        <br>
+      </h2>
+      <h2>
+        <span style="font-size: 10pt"><i>made by</i></span> 늘푸른초등학교 방송부 2020 <span style="font-size: 10pt;">기계 PC-2
+          담당자</span>
+      </h2>
+    </div>
+    <button onclick="go_with_load(500, '/2.0/morning')" class="startbtn">
+      <span style="font-size: 30px">아침방송용</span>
     </button>
-    <button onclick="go_with_load(2500, '/neulbo')">
-      <span style="font-size: 30px">늘보마당용</span><br>시작하기
+    <button onclick="go_with_load(2500, '/2.0/neulbo')" class="startbtn">
+      <span style="font-size: 30px">늘보마당용</span>
     </button>
-    <h2><span style="font-size:10pt">[Update Info]</span><br>BCA for PC-2 v1.1 Updated!</h2>
-    <ol>
+    <div style="">
+      <h2><span style="font-size:10pt">[Update Info]</span><br>BCA for PC-2 v2ᵝ Updated!</h2>
+    </div>
+    <p>문의는 <button onclick="mail();">여기</button> 클릭</p>
+  </div>
+  <!-- <ol>
       <li>점수 확인하기 기능 추가</li>
       <li>version 2.0 Coming soon...</li>
       <li>Goto button added</li>
       <li>Player Time Viewer</li>
-    </ol>
-    <button onclick="window.alert
+    </ol> -->
+  <!-- <button onclick="window.alert
       ('Page will reload.'); window.reload()">Reload</button>
     <p>문의는 <button onclick="mail();">여기</button> 클릭</p>
     <button onclick="go_with_load(2500, '/testscore')"
@@ -236,11 +315,7 @@
     <button onclick="go_with_load(2500, '/testscore_3')"
       style="width: 300px; height: 100px; color: orange; background-color: rgb(88, 88, 255)">
       <span style="font-size: 30px">내 3차 TEST 점수</span><br>확인하러 가기
-    </button>
-    <button onclick="go_with_load(2500, '/beta')"
-      style="width: 300px; height: 100px; color: orange; background-color: rgb(88, 88, 255)">
-      <span style="font-size: 30px">내 3차 TEST 점수</span><br>확인하러 가기
-    </button>
+    </button> -->
   </div>
   <div id="load1" style="display: none;">
     <div class="sk-cube-grid">

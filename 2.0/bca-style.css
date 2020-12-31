@@ -1,0 +1,292 @@
+* {
+  align-items: center;
+  text-align: center;
+  scroll-behavior: smooth;
+  font-family: 'Gamja Flower';
+}
+
+h2 {
+  font-family: 'Gugi';
+}
+
+button span {
+  font-family: 'Gugi';
+  font-size: 17pt;
+}
+
+body {
+  height: 100%;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 15%;
+  height: 100%;
+  background: linear-gradient(270deg, #93ffa5, #BB86FF, #000000);
+  background-size: 600% 600%;
+  -webkit-animation: Header-Grad 13s ease infinite;
+  -moz-animation: Header-Grad 13s ease infinite;
+  animation: Header-Grad 13s ease infinite;
+  text-align: center;
+}
+
+#top {
+  width: 100%;
+  height: 1000px;
+  margin: 0;
+  background: linear-gradient(270deg, #93ffa5, #BB86FF, #000000);
+  background-size: 600% 600%;
+  -webkit-animation: Header-Grad 13s ease infinite;
+  -moz-animation: Header-Grad 13s ease infinite;
+  animation: Header-Grad 13s ease infinite;
+}
+
+.header:hover {
+  transition: 1s;
+  -webkit-animation: Header-Text-ani 5s ease infinite;
+  -moz-animation: Header-Text-ani 5s ease infinite;
+  animation: Header-Text-ani 5s ease infinite;
+  -webkit-animation: Header-Grad 3s ease infinite;
+  -moz-animation: Header-Grad 3s ease infinite;
+  animation: Header-Grad 3s ease infinite;
+}
+
+@-webkit-keyframes Header-Grad {
+  0% {
+    background-position: 0% 50%;
+    color: white;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    color: black;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    color: white;
+  }
+}
+
+@-moz-keyframes Header-Grad {
+  0% {
+    background-position: 0% 50%;
+    color: white;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    color: black;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    color: white;
+  }
+}
+
+@keyframes Header-Grad {
+  0% {
+    background-position: 0% 50%;
+    color: white;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    color: black;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    color: white;
+  }
+}
+
+@-webkit-keyframes Header-Text-ani {
+  0% {
+    color: black;
+    text-align: center;
+  }
+
+  25% {
+    color: red;
+    text-align: right;
+  }
+
+  50% {
+    color: white;
+    padding-right: 0%;
+    text-align: left;
+  }
+
+  100% {
+    color: black;
+    padding-left: 0%;
+    text-align: center;
+  }
+}
+
+@-moz-keyframes Header-Text-ani {
+  0% {
+    color: black;
+    text-align: center;
+  }
+
+  25% {
+    color: red;
+    text-align: right;
+  }
+
+  50% {
+    color: white;
+    padding-right: 0%;
+    text-align: left;
+  }
+
+  100% {
+    color: black;
+    padding-left: 0%;
+    text-align: center;
+  }
+}
+
+@keyframes Header-Text-ani {
+  0% {
+    color: black;
+    text-align: center;
+  }
+
+  25% {
+    color: red;
+    text-align: right;
+  }
+
+  50% {
+    color: white;
+    padding-right: 0%;
+    text-align: left;
+  }
+
+  100% {
+    color: black;
+    padding-left: 0%;
+    text-align: center;
+  }
+}
+
+.video {
+  cursor: help;
+  width: 50%;
+}
+
+.video:hover {
+  border-top: rgb(105, 32, 32) dotted 10px;
+  border-bottom: rgb(105, 32, 32) dotted 10px;
+  height: 47%;
+  transition: 0.5s;
+}
+
+.control-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(255, 214, 139);
+  color: black;
+  text-align: center;
+  border: none;
+  font-size: 28px;
+  padding: 15px;
+  transition: all 0.5s;
+  margin-bottom: 10px;
+}
+
+.control-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.control-button:hover {
+  background: linear-gradient(270deg, yellow, orange);
+  background-size: 600% 600%;
+  -webkit-animation: Header-Text-ani 7s ease infinite;
+  -moz-animation: Header-Text-ani 7s ease infinite;
+  animation: Header-Text-ani 7s ease infinite;
+  -webkit-animation: Header-Grad 7s ease infinite;
+  -moz-animation: Header-Grad 7s ease infinite;
+  animation: Header-Grad 7s ease infinite;
+}
+
+.control-button:hover span {
+  padding-right: 40px;
+}
+
+.control-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.play span:after {
+  content: '▶️';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 1s;
+}
+
+.pause span:after {
+  content: '⏸';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 1s;
+}
+
+.reset span {
+  cursor: alias;
+}
+
+.reset span:after {
+  content: '⏹';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 1s;
+}
+
+.loop span {
+  cursor: alias;
+}
+
+.loop span:after {
+  content: '🔄';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 1s;
+}
+
+.fullscreen span:after {
+  content: '🔲';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 1s;
+  cursor: nesw-resize;
+}
+
+.fullscreen span {
+  cursor: nesw-resize;
+}
+
+.video:fullscreen {
+  cursor: none;
+  border: none;
+}
