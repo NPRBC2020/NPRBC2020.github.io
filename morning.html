@@ -14,6 +14,75 @@
       text-align: center;
       scroll-behavior: smooth;
       font-family: 'Gamja Flower';
+      color: white;
+    }
+
+    body {
+      background: linear-gradient(270deg, #5b5b5b, #0e7730);
+      background-size: 400% 400%;
+      -webkit-animation: BGGrad 15s ease infinite;
+      -moz-animation: BGGrad 15s ease infinite;
+      animation: BGGrad 15s ease infinite;
+    }
+
+    @-webkit-keyframes BGGrad {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @-moz-keyframes BGGrad {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @keyframes BGGrad {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @keyframes topHoverAni {
+      0% {
+        box-shadow: 0 0 25px orange;
+      }
+
+      25% {
+        box-shadow: 0 0 40px white;
+      }
+
+      50% {
+        box-shadow: 0 0 40px white;
+      }
+
+      100% {
+        box-shadow: 0 0 25px orange;
+      }
     }
 
     h2 {
@@ -22,6 +91,7 @@
 
     button span {
       font-family: 'Gugi';
+      color: black;
       font-size: 17pt;
     }
 
@@ -29,21 +99,18 @@
       height: 100%;
     }
 
-    .header {
-      top: 0;
-      left: 0;
-      position: fixed;
-      width: 15%;
-      height: 100%;
-      background: linear-gradient(270deg, #93ffa5, #BB86FF, #000000);
-      background-size: 600% 600%;
-      -webkit-animation: Header-Grad 13s ease infinite;
-      -moz-animation: Header-Grad 13s ease infinite;
-      animation: Header-Grad 13s ease infinite;
-      text-align: center;
+    #top {
+      width: 100%;
+      background-color: black;
+      border-radius: 100px;
+      box-shadow: 0 0 25px orange;
     }
 
-    #top {
+    #top:hover {
+      animation: topHoverAni 3s ease infinite;
+    }
+
+    /* #top {
       width: 100%;
       height: 1000px;
       margin: 0;
@@ -52,7 +119,7 @@
       -webkit-animation: Header-Grad 13s ease infinite;
       -moz-animation: Header-Grad 13s ease infinite;
       animation: Header-Grad 13s ease infinite;
-    }
+    } */
 
     .header:hover {
       transition: 1s;
@@ -64,139 +131,16 @@
       animation: Header-Grad 3s ease infinite;
     }
 
-    @-webkit-keyframes Header-Grad {
-      0% {
-        background-position: 0% 50%;
-        color: white;
-      }
-
-      50% {
-        background-position: 100% 50%;
-        color: black;
-      }
-
-      100% {
-        background-position: 0% 50%;
-        color: white;
-      }
-    }
-
-    @-moz-keyframes Header-Grad {
-      0% {
-        background-position: 0% 50%;
-        color: white;
-      }
-
-      50% {
-        background-position: 100% 50%;
-        color: black;
-      }
-
-      100% {
-        background-position: 0% 50%;
-        color: white;
-      }
-    }
-
-    @keyframes Header-Grad {
-      0% {
-        background-position: 0% 50%;
-        color: white;
-      }
-
-      50% {
-        background-position: 100% 50%;
-        color: black;
-      }
-
-      100% {
-        background-position: 0% 50%;
-        color: white;
-      }
-    }
-
-    @-webkit-keyframes Header-Text-ani {
-      0% {
-        color: black;
-        text-align: center;
-      }
-
-      25% {
-        color: red;
-        text-align: right;
-      }
-
-      50% {
-        color: white;
-        padding-right: 0%;
-        text-align: left;
-      }
-
-      100% {
-        color: black;
-        padding-left: 0%;
-        text-align: center;
-      }
-    }
-
-    @-moz-keyframes Header-Text-ani {
-      0% {
-        color: black;
-        text-align: center;
-      }
-
-      25% {
-        color: red;
-        text-align: right;
-      }
-
-      50% {
-        color: white;
-        padding-right: 0%;
-        text-align: left;
-      }
-
-      100% {
-        color: black;
-        padding-left: 0%;
-        text-align: center;
-      }
-    }
-
-    @keyframes Header-Text-ani {
-      0% {
-        color: black;
-        text-align: center;
-      }
-
-      25% {
-        color: red;
-        text-align: right;
-      }
-
-      50% {
-        color: white;
-        padding-right: 0%;
-        text-align: left;
-      }
-
-      100% {
-        color: black;
-        padding-left: 0%;
-        text-align: center;
-      }
-    }
-
     .video {
       cursor: help;
       width: 50%;
+      box-shadow: 0 0 10px white;
     }
 
     .video:hover {
-      border-top: rgb(105, 32, 32) dotted 10px;
-      border-bottom: rgb(105, 32, 32) dotted 10px;
-      height: 47%;
+      border: double white;
       transition: 0.5s;
+      animation: videoTrans 10s ease infinite;
     }
 
     .control-button {
@@ -301,6 +245,38 @@
       cursor: none;
       border: none;
     }
+
+    #backbtn {
+      background-color: black;
+      border: none;
+    }
+
+    #backbtn:hover {
+      border: double blue;
+      transition: 0.7s;
+    }
+
+    @keyframes textAni {
+      0% {}
+    }
+
+    @keyframes videoTrans {
+      0% {
+        transform: rotateY(0deg);
+      }
+
+      25% {
+        transform: rotateY(180deg);
+      }
+
+      50% {
+        transform: rotateY(360deg);
+      }
+
+      100% {
+        transform: rotateY(0deg);
+      }
+    }
   </style>
 </head>
 
@@ -312,71 +288,86 @@
     <a href="#bca"><button>시작하기</button></a>
   </div>-->
   <div id="bca">
-    <div class="header">
-      <a href="/"><button>To Starting Page</button></a>
-      <h1 style="font-family:'Sunflower'">아침방송</h1>
-      <h2>NPRBC Broadcasting Assistant <br><i>made by</i> NPRBC2020</h2>
-      <p>[Video FullScreen Autoplay] 영상은 FullScreen 버튼을 이용해 전체화면으로 전환이 가능하며 전체화면 전환후 자동 재생됩니다.</p>
-      <p>[Video Browser Transition] Browser의 자동적인 화면 전환 효과가 보일 수 있으므로 영상을 FullScreen으로 바꿀 때(특히 '국기' 영상)에는 <b
-          style="color: red">반드시
-          Fullscreen버튼을 사용</b>해
-        주시기 바랍니다.</p>
-      <p style="color: orange">[Video Info] '잠시후 방송이 시작됩니다.'('시작전')과 '방송이 끝났습니다'('끝') 영상은 NPRBC2020 기계에 의해 만들어 졌으며 학교
-        방송외 다른 목적으로 사용하거나 무단 복제
-        등을 금지합니다.</p>
+    <a href="/"><button id="backbtn">To Starting Page</button></a>
+    <div id="top">
+      <h2 style="font-family:'Sunflower'">아침방송</h2>
+      <h1 style="font-family: Gugi">B C A</h1>
+      <h6>HAPPILY TOOLS</h6>
+      <div id="infotop" style="display: none;">
+        <p>[Video FullScreen Autoplay] 영상은 FullScreen 버튼을 이용해 전체화면으로 전환이 가능하며 전체화면 전환후 자동 재생됩니다.</p>
+        <p>[Video Browser Transition] Browser의 자동적인 화면 전환 효과가 보일 수 있으므로 영상을 FullScreen으로 바꿀 때(특히 '국기' 영상)에는 <b
+            style="color: red">반드시
+            Fullscreen버튼을 사용</b>해
+          주시기 바랍니다.</p>
+        <p style="color: orange">[Video Info] '잠시후 방송이 시작됩니다.'('시작전')과 '방송이 끝났습니다'('끝') 영상은 NPRBC2020 기계에 의해 만들어 졌으며 학교
+          방송외 다른 목적으로 사용하거나 무단 복제
+          등을 금지합니다.</p>
+      </div>
     </div>
-    <h2>⚠️중요 업데이트!</h2>
-    <a href="/2.0/index.html"><button style="font-size: 30px; background-color: orange; color: purple;">더욱 새로운 방송도구의
-        경험!<br>버전 2.0을 지금
-        사용해보세요.<br>익숙한 사용방법 그대로! 언제든지 v1로 돌아오기 가능!</button></a>
-    <div id="bcab" style="margin-left: 10%;">
-      <h2>시작전</h2>
-      <p>아나운서의 첫번째 멘트 재생부터 시작해 방송시작(카메라가 움직이기) 직전까지 재생합니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
-        PC-2화면으로
-        전환합니다.</p>
-      <video class="video"
-        src="https://video.wixstatic.com/video/d5ec50_ce738636219f473585a6d1b6a83e91fb/1080p/mp4/file.mp4" loop
-        id="start" onclick="toggleFullScreen('start')"></video>
-      <br>
-      <button class="control-button play" onclick="document.getElementById('start').play()"><span>Play</span></button>
-      <button class="control-button pause"
-        onclick="document.getElementById('start').pause()"><span>Pause</span></button>
-      <button class="control-button loop" onclick="toggleLoop('start')"><span>Loop</span></button>
-      <button class="control-button reset" onclick="document.getElementById('start').load()"><span>Reset</span></button>
-      <button class="control-button fullscreen" onclick="toggleFullScreen('start')"><span>FullScreen</span></button>
-      <h2>국기</h2>
-      <p>사회자의 말에 맞춰 재생합니다. 전체화면으로 재생하여야하며, VIDEO-MIXER에서 재생 동시에 PC-2로 화면전환 해줍니다.</p>
-      <video class="video"
-        src="https://video.wixstatic.com/video/d5ec50_fddac402ca154a3ba341d00cdc993d11/480p/mp4/file.mp4" id="1"
-        onclick="toggleFullScreen('1')"></video>
-      <br>
-      <button class="control-button play" onclick="start_music('1', 'tv', 'ftv1');"><span>Play</span></button>
-      <button class="control-button pause" onclick="document.getElementById('1').pause()"><span>Pause</span></button>
-      <button class="control-button loop" onclick="toggleLoop('1')"><span>Loop</span></button>
-      <button class="control-button reset" onclick="document.getElementById('1').load()"><span>Reset</span></button>
-      <button class="control-button fullscreen" onclick="toggleFullScreen('1')"><span>FullScreen</span></button>
-      <p>Time: <span id="tv1">-</span>/<span id="ftv1">-</span></p>
-      <div class="adv-mcontrol">
-        <button class="control-button play" onclick="av_goto('1');"><span>Goto</span></button>
-      </div>
-      <h2>애국가</h2>
-      <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>아래 재생가능한 오디오는 1절만 입니다.</p>
-      <audio src="https://static.wixstatic.com/mp3/d5ec50_103f457f19a84a089a26432351d81fe3.mp3" id="anthem"
-        controls></audio>
-      <br>
-      <button class="control-button play" onclick="start_music('anthem', 'ta', 'fta');"><span>Play</span></button>
-      <button class="control-button pause"
-        onclick="document.getElementById('anthem').pause()"><span>Pause</span></button>
-      <button class="control-button loop" onclick="toggleLoop('anthem')"><span>Loop</span></button>
-      <button class="control-button reset"
-        onclick="document.getElementById('anthem').load()"><span>Reset</span></button>
-      <div class="adv-mcontrol">
-        <p>Time: <span id="ta">-</span>/<span id="fta">-</span></p>
-        <button class="control-button play" onclick="av_goto('anthem');"><span>Goto</span></button>
-      </div>
-      <h2>교가</h2>
-      <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>'Only Play 1절'을 재생하시면 1절만 재생하고 끝나 더욱 편리하게 이용하실 수 있습니다.</p>
-      <!--<h3>전체</h3>
+    <div class="header">
+      <!-- <h2>NPRBC Broadcasting Assistant <br><i>made by</i> NPRBC2020</h2>
+    </div> -->
+      <div id="bcab">
+        <div style="width: 50px; height: 50px; background-color: black; border-radius: 10px; position: fixed;">
+          <a style="font-size: 40px">+</a>
+          <div id="controls" style="width: 90px; background-color: black; border-radius: 10px; position: fixed;">
+            <a>Advanced controls comming soon</a>
+            <br>
+            <a></a>
+          </div>
+        </div>
+        <h2>시작전</h2>
+        <p>아나운서의 첫번째 멘트 재생부터 시작해 방송시작(카메라가 움직이기) 직전까지 재생합니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
+          PC-2화면으로
+          전환합니다.</p>
+        <video class="video"
+          src="https://video.wixstatic.com/video/d5ec50_ce738636219f473585a6d1b6a83e91fb/1080p/mp4/file.mp4" loop
+          id="start" onclick="toggleFullScreen('start')"></video>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('start').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('start').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('start')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('start').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('start')"><span>FullScreen</span></button>
+        <h2>국기</h2>
+        <p>사회자의 말에 맞춰 재생합니다. 전체화면으로 재생하여야하며, VIDEO-MIXER에서 재생 동시에 PC-2로 화면전환 해줍니다.</p>
+        <video class="video"
+          src="https://video.wixstatic.com/video/d5ec50_fddac402ca154a3ba341d00cdc993d11/480p/mp4/file.mp4" id="1"
+          onclick="toggleFullScreen('1')"></video>
+        <br>
+        <button class="control-button play" onclick="start_music('1', 'tv', 'ftv1');"><span>Play</span></button>
+        <button class="control-button pause" onclick="document.getElementById('1').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('1')"><span>Loop</span></button>
+        <button class="control-button reset" onclick="document.getElementById('1').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('1')"><span>FullScreen</span></button>
+        <br>
+        <a>Time: </a><span id="tss1">-</span>/<span id="ftss1">-</span>
+        <!--<button style="height: 10px; font-size: 5pt; background-color: grey; border: none"><span>⇣</span></button>-->
+        <!-- <div class="adv-mcontrol"> -->
+        <a onclick="av_goto('1');"><u>Goto</u></a>
+        <!-- </div> -->
+        <h2>애국가</h2>
+        <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>아래 재생가능한 오디오는 1절만 입니다.</p>
+        <audio src="https://static.wixstatic.com/mp3/d5ec50_103f457f19a84a089a26432351d81fe3.mp3" id="anthem"
+          controls></audio>
+        <br>
+        <button class="control-button play" onclick="start_music('anthem', 'ta', 'fta');"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('anthem').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('anthem')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('anthem').load()"><span>Reset</span></button>
+        <br>
+        <a>Time: </a><span id="tss1">-</span>/<span id="ftss1">-</span>
+        <!--<button style="height: 10px; font-size: 5pt; background-color: grey; border: none"><span>⇣</span></button>-->
+        <!-- <div class="adv-mcontrol"> -->
+        <a onclick="av_goto('anthem');"><u>Goto</u></a>
+        <!-- </div> -->
+        <h2>교가</h2>
+        <p>지휘자에 카메라가 맞춰지면 1절만 재생합니다.<br>'Only Play 1절'을 재생하시면 1절만 재생하고 끝나 더욱 편리하게 이용하실 수 있습니다.</p>
+        <!--<h3>전체</h3>
       <audio src="https://static.wixstatic.com/mp3/d5ec50_b6a3072057234962826d855d3333f464.mp3" id="schoolSong"></audio>
       <button class="control-button play"
         onclick="document.getElementById('schoolSong').play()"><span>Play</span></button>
@@ -385,36 +376,38 @@
       <button class="control-button loop" onclick="toggleLoop('schoolSong')"><span>Loop</span></button>
       <button class="control-button reset"
         onclick="document.getElementById('schoolSong').load()"><span>Reset</span></button>-->
-      <h3>Only Play 1절</h3>
-      <audio src="https://static.wixstatic.com/mp3/d5ec50_e5414f2fac2a44f59cbf55596a6c222c.m4a"
-        id="schoolSong1"></audio>
-      <button class="control-button play"
-        onclick="start_music('schoolSong1', 'tss1', 'ftss1');"><span>Play</span></button>
-      <button class="control-button pause"
-        onclick="document.getElementById('schoolSong1').pause()"><span>Pause</span></button>
-      <button class="control-button loop" onclick="toggleLoop('shcoolSong1')"><span>Loop</span></button>
-      <button class="control-button reset"
-        onclick="document.getElementById('schoolSong1').load()"><span>Reset</span></button>
-      <p>Time: <span id="tss1">-</span>/<span id="ftss1">-</span></p>
-      <!--<button style="height: 10px; font-size: 5pt; background-color: grey; border: none"><span>⇣</span></button>-->
-      <div class="adv-mcontrol">
-        <button class="control-button play" onclick="av_goto('schoolSong1');"><span>Goto</span></button>
+        <h3>Only Play 1절</h3>
+        <audio src="https://static.wixstatic.com/mp3/d5ec50_e5414f2fac2a44f59cbf55596a6c222c.m4a" id="schoolSong1"
+          controls></audio>
+        <br>
+        <button class="control-button play"
+          onclick="start_music('schoolSong1', 'tss1', 'ftss1');"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('schoolSong1').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('shcoolSong1')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('schoolSong1').load()"><span>Reset</span></button>
+        <br>
+        <a>Time: </a><span id="tss1">-</span>/<span id="ftss1">-</span>
+        <!--<button style="height: 10px; font-size: 5pt; background-color: grey; border: none"><span>⇣</span></button>-->
+        <!-- <div class="adv-mcontrol"> -->
+        <a onclick="av_goto('schoolSong1');"><u>Goto</u></a>
+        <!-- </div> -->
+        <h2>끝</h2>
+        <p>방송이 끝난후 바로 켜서 1회 재생후 VIDEO-MIXER의 전원을 꺼 방송을 끝냅니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
+          PC-2화면으로
+          전환합니다.</p>
+        <video class="video"
+          src="https://video.wixstatic.com/video/d5ec50_36396f625f884cb9a717d478f3a698d4/1080p/mp4/file.mp4" id="end"
+          onclick="toggleFullScreen('end')"></video>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('end').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('end').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('end')"><span>Loop</span></button>
+        <button class="control-button reset" onclick="document.getElementById('end').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('end')"><span>FullScreen</span></button>
       </div>
-      <h2>끝</h2>
-      <p>방송이 끝난후 바로 켜서 1회 재생후 VIDEO-MIXER의 전원을 꺼 방송을 끝냅니다.<br>전체화면으로 재생하여야하며, VIDEO-MIXER에서 'MIX' Effect로 반보다 살짝 넘게
-        PC-2화면으로
-        전환합니다.</p>
-      <video class="video"
-        src="https://video.wixstatic.com/video/d5ec50_36396f625f884cb9a717d478f3a698d4/1080p/mp4/file.mp4" id="end"
-        onclick="toggleFullScreen('end')"></video>
-      <br>
-      <button class="control-button play" onclick="document.getElementById('end').play()"><span>Play</span></button>
-      <button class="control-button pause" onclick="document.getElementById('end').pause()"><span>Pause</span></button>
-      <button class="control-button loop" onclick="toggleLoop('end')"><span>Loop</span></button>
-      <button class="control-button reset" onclick="document.getElementById('end').load()"><span>Reset</span></button>
-      <button class="control-button fullscreen" onclick="toggleFullScreen('end')"><span>FullScreen</span></button>
-    </div>
-  </div>
 </body>
 
 </html>
