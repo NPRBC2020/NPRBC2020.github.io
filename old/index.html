@@ -10,14 +10,29 @@
 <style>
   * {
     text-align: center;
-    color: black;
+    color: lightgrey;
   }
 
   body {
-    background: linear-gradient(270deg, grey, skyblue);
+    background: linear-gradient(270deg, #5b5b5b, #0e7730);
     background-size: 400% 400%;
+    -webkit-animation: BGGrad 15s ease infinite;
     -moz-animation: BGGrad 15s ease infinite;
     animation: BGGrad 15s ease infinite;
+  }
+
+  @-webkit-keyframes BGGrad {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
   }
 
   @-moz-keyframes BGGrad {
@@ -65,6 +80,7 @@
   #top {
     background-color: black;
     border-radius: 100px;
+    box-shadow: 0 0 25px orange;
     width: 100%;
   }
 
@@ -86,6 +102,49 @@
     background-color: rgb(31, 31, 31);
     width: 50%;
     transition: 0.3s;
+    animation: rotatebtn 15s ease infinite;
+  }
+
+  @keyframes rotatebtn {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    10% {
+      transform: rotateX(30deg) rotateY(0deg);
+    }
+
+    20% {
+      transform: rotateX(0deg) rotateY(20deg);
+    }
+
+    30% {
+      transform: rotateX(0deg) rotateY(30deg);
+    }
+
+    40% {
+      transform: rotateX(360deg) rotateY(0deg);
+    }
+
+    60% {
+      transform: rotateX(0deg) rotateY(-20deg);
+    }
+
+    70% {
+      transform: rotateX(0deg) rotateY(-25deg);
+    }
+
+    80% {
+      transform: rotateX(-360deg) rotateY(-20deg);
+    }
+
+    95% {
+      transform: rotateX(-10deg) rotateY(-10deg);
+    }
+
+    100% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
   }
 
   button {
@@ -220,8 +279,7 @@
     <div id="top">
       <h1 id="tt">Broadcasting Assistant<br><span style="font-size: 15pt">for PC-2</span>
       </h1>
-      <h6 style="font-family: Gugi;">HAPPILY TOOLS</h6>
-      <h2>version</span> <i>v2ᵝ</i>
+      <h2>version</span> <i>v3.0</i>
         <br>
       </h2>
       <h2>

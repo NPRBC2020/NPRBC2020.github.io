@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+	<link href="./bcstyle.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+  <title>일반 방송 | BCA for 늘푸른초등학교 방송부</title>
+  <script src="./av_controls.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+    <a href="/">홈으로 돌아가기</a>
+  <h1>일반방송</h1>
+  <h2>Broadcasting Assistant</h2>
+      <div id="bcab">
+        <h2>시작전</h2>
+        <video class="video"
+          src="https://video.wixstatic.com/video/d5ec50_ce738636219f473585a6d1b6a83e91fb/1080p/mp4/file.mp4" loop
+          id="start" onclick="toggleFullScreen('start')"></video>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('start').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('start').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('start')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('start').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('start')"><span>FullScreen</span></button>
+        <h2>국기</h2>
+        <p>재생과 동시에 VIDEO-MIXER에서 PC-2로 화면을 전환합니다.</p>
+        <video class="video"
+          src="https://video.wixstatic.com/video/d5ec50_fddac402ca154a3ba341d00cdc993d11/480p/mp4/file.mp4" id="flag"
+          onclick="toggleFullScreen('flag')"></video>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('flag').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('flag').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('flag')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('flag').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('flag')"><span>FullScreen</span></button>
+        <h2>애국가</h2>
+        <p>아래 재생 가능 오디오는 1절까지 입니다.</p>
+        <audio
+          src="https://static.wixstatic.com/mp3/d5ec50_103f457f19a84a089a26432351d81fe3.mp3" id="anthem"></audio>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('anthem').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('anthem').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('anthem')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('anthem').load()"><span>Reset</span></button>
+        <h2>늘푸른초등학교 교가</h2>
+        <p>아래 재생 가능 오디오는 1절까지 입니다.</p>
+        <audio
+          src="https://static.wixstatic.com/mp3/d5ec50_e5414f2fac2a44f59cbf55596a6c222c.m4a" id="school"></audio>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('school').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('school').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('school')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('school').load()"><span>Reset</span></button>
+        <h2>추가 영상1</h2>
+        <p>방송에 따라 추가로 필요한 영상이 있는 경우 온라인상 영상 파일의 주소(URL)을 Change Video 버튼을 통해 입력해주세요.</p>
+        <video class="video"
+          src="" id="v1"
+          onclick="toggleFullScreen('v1')"></video>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('v1').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('v1').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('v1')"><span>Loop</span></button>
+        <button class="control-button reset"
+          onclick="document.getElementById('v1').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('v1')"><span>FullScreen</span></button>
+				<button class="control-button play" onclick="addvideo('v1')"><span>Change Video</span></button>
+        <h2>끝</h2>
+        <video class="video"
+          src="https://video.wixstatic.com/video/d5ec50_36396f625f884cb9a717d478f3a698d4/1080p/mp4/file.mp4" id="end"
+          onclick="toggleFullScreen('end')"></video>
+        <br>
+        <button class="control-button play" onclick="document.getElementById('end').play()"><span>Play</span></button>
+        <button class="control-button pause"
+          onclick="document.getElementById('end').pause()"><span>Pause</span></button>
+        <button class="control-button loop" onclick="toggleLoop('end')"><span>Loop</span></button>
+        <button class="control-button reset" onclick="document.getElementById('end').load()"><span>Reset</span></button>
+        <button class="control-button fullscreen" onclick="toggleFullScreen('end')"><span>FullScreen</span></button>
+</body>
+
+</html>

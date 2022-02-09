@@ -1,0 +1,35 @@
+body {
+    font-family: 'Nanum Gothic';
+    text-align: center;
+    background: linear-gradient(45deg, skyblue, violet) no-repeat;
+    min-height: 100vh;
+}
+  
+  .video {
+    width: 50%;
+  }
+  
+  a {
+      color: black;
+      border: none;
+      padding: 15px;
+  }
+  
+  a:hover {
+      border: blue 1px solid;
+      padding: 5px;
+      transition: 0.5s ease;
+  }
+  
+  .topbtn {
+      background-color: rgb(255, 255, 255, 0.5);
+      font-size: 15px;
+      min-width: 50px;
+      min-height: 40px;
+      border: white 1px solid;
+  }
+  
+  .topbtn:hover {
+      border: none;
+      transition: 0.5s ease;
+  }
